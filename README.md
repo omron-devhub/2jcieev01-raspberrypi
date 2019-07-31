@@ -9,11 +9,11 @@ prototype your ideas with variety environmental information.
 Sample programs for acquiring data from sensors on 2JCIE-EV01.
 there samples output the sensor data to console.
 
-| example        | description                     | baord |
+| example        | description                     | board |
 |:--------------:|:--------------------------------|:--------------------|
 | 2jcieev01-baro | The Barometer sensor sample     | Raspberry-Pi ZERO-W |
-| 2jcieev01-humi | The Illuminance sensor sample   | Raspberry-Pi ZERO-W |
-| 2jcieev01-illm | The Humidity sensor sample      | Raspberry-Pi ZERO-W |
+| 2jcieev01-humi | The Humidity sensor sample      | Raspberry-Pi ZERO-W |
+| 2jcieev01-illm | The Illuminance sensor sample   | Raspberry-Pi ZERO-W |
 | 2jcieev01-accl | The Accelerometer sensor sample | Raspberry-Pi ZERO-W |
 
 ## DEMO
