@@ -184,7 +184,7 @@ uint32_t opt3001_convert_lux_value_x100(uint16_t value_raw) {
 
     /* Convert the value to centi-percent RH */
     exp = (value_raw >> 12) & 0x0F;
-    exp = 2 << exp;
+    exp = 1 << exp;
     data = value_raw & 0x0FFF;
     value_converted = (uint32_t)(exp * data);
 
@@ -203,7 +203,7 @@ int main() {
     }
     delay(110);
     int ret = opt3001_read_data(&illm);
-    printf("%10.2f, return code: %d\n", illm / 100.0, ret);
+    printf("%10d, return code: %d\n", illm, ret);
     return 0;
 }
 // vi: ft=arduino:fdm=marker:et:sw=4:tw=80
