@@ -311,18 +311,18 @@ int main() {
     uint8_t power_mode = BARO_2SMPB02E_VAL_POWERMODE_NORMAL;
     uint8_t meas_mode = BARO_2SMPB02E_VAL_MEASMODE_ULTRAHIGH;    
     if(power_mode == BARO_2SMPB02E_VAL_POWERMODE_NORMAL){
-		baro_2smpb02e_trigger_measurement(power_mode, meas_mode);
+	baro_2smpb02e_trigger_measurement(power_mode, meas_mode);
     }
     while(1){
-		if(power_mode == BARO_2SMPB02E_VAL_POWERMODE_FORCED){
-			baro_2smpb02e_trigger_measurement(power_mode, meas_mode);
-		}
-		delay(900);
-	
-		// 4, 5, 6, 7
-		baro_2smpb02e_read(&pres, &temp, &dp, &dt);
-		printf("%10.1f, %7.2f, %x, %x\n",
-           pres / 10.0, temp / 100.0, dp, dt);
+	if(power_mode == BARO_2SMPB02E_VAL_POWERMODE_FORCED){
+	baro_2smpb02e_trigger_measurement(power_mode, meas_mode);
 	}
+	delay(900);
+	
+	// 4, 5, 6, 7
+	baro_2smpb02e_read(&pres, &temp, &dp, &dt);
+	printf("%10.1f, %7.2f, %x, %x\n",
+    	pres / 10.0, temp / 100.0, dp, dt);
+　　}
 }
 // vi: ft=arduino:fdm=marker:et:sw=4:tw=80
