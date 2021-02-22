@@ -42,7 +42,7 @@ baro_2smpb02e_setting_t baro_2smpb02e_setting;
 static double baro_2smpb02e_conv16_dbl(
         double a, double s, uint8_t* buf, int offset);
 static double baro_2smpb02e_conv20q4_dbl(uint8_t* buf, uint8_t ex, int offset);
-static bool baro_2smpb02e_trigger_measurement(uint8_t mode);
+static bool baro_2smpb02e_trigger_measurement(uint8_t powermode, uint8_t measmode);
 
 #define RASPBERRY_PI_I2C    "/dev/i2c-1"
 #define I2CDEV              RASPBERRY_PI_I2C
@@ -318,8 +318,8 @@ int main() {
 	
 		// 4, 5, 6, 7
 		baro_2smpb02e_read(&pres, &temp, &dp, &dt);
-		printf("%10.1f, %7.3f, %x, %x, retun code: %d\n",
-           pres / 10.0, temp / 100.0, dp, dt, ret);
+		printf("%10.1f, %7.2f, %x, %x\n",
+           pres / 10.0, temp / 100.0, dp, dt);
 	}
 }
 // vi: ft=arduino:fdm=marker:et:sw=4:tw=80
