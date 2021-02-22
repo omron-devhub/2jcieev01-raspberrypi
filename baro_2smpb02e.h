@@ -55,13 +55,13 @@
 
     /* Register values */
     #define BARO_2SMPB02E_VAL_IOSETUP_STANDBY_0001MS       ((uint8_t)0x00)
-    #define BARO_2SMPB02E_VAL_IOSETUP_STANDBY_0125MS       ((uint8_t)0x20)
-    #define BARO_2SMPB02E_VAL_IOSETUP_STANDBY_0250MS       ((uint8_t)0x40)
-    #define BARO_2SMPB02E_VAL_IOSETUP_STANDBY_0500MS       ((uint8_t)0x60)
-    #define BARO_2SMPB02E_VAL_IOSETUP_STANDBY_1000MS       ((uint8_t)0x80)
-    #define BARO_2SMPB02E_VAL_IOSETUP_STANDBY_2000MS       ((uint8_t)0xA0)
-    #define BARO_2SMPB02E_VAL_IOSETUP_STANDBY_4000MS       ((uint8_t)0xC0)
-    #define BARO_2SMPB02E_VAL_IOSETUP_STANDBY_8000MS       ((uint8_t)0xE0)
+    #define BARO_2SMPB02E_VAL_IOSETUP_STANDBY_0005MS       ((uint8_t)0x20)
+    #define BARO_2SMPB02E_VAL_IOSETUP_STANDBY_0050MS       ((uint8_t)0x40)
+    #define BARO_2SMPB02E_VAL_IOSETUP_STANDBY_0250MS       ((uint8_t)0x60)
+    #define BARO_2SMPB02E_VAL_IOSETUP_STANDBY_0500MS       ((uint8_t)0x80)
+    #define BARO_2SMPB02E_VAL_IOSETUP_STANDBY_1000MS       ((uint8_t)0xA0)
+    #define BARO_2SMPB02E_VAL_IOSETUP_STANDBY_2000MS       ((uint8_t)0xC0)
+    #define BARO_2SMPB02E_VAL_IOSETUP_STANDBY_4000MS       ((uint8_t)0xE0)
 
     #define BARO_2SMPB02E_VAL_TEMPAVERAGE_01     ((uint8_t)0x20)
     #define BARO_2SMPB02E_VAL_TEMPAVERAGE_02     ((uint8_t)0x40)
