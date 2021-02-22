@@ -250,15 +250,17 @@ int baro_2smpb02e_read(uint32_t* pres, int16_t* temp,
     uint8_t rbuf[6] = {0};
     uint32_t rawtemp, rawpres;
 
+    //4, 5: Read Uncompensated Temperature & Pressure value
     ret = i2c_read_reg8(
             BARO_2SMPB02E_ADDRESS, BARO_2SMPB02E_REGI2C_PRES_TXD2,
             rbuf, sizeof(rbuf));
     if (ret) {
         return ret;
     }
-
     *dp = rawpres = conv8s_s24_be(rbuf[0], rbuf[1], rbuf[2]);
     *dt = rawtemp = conv8s_s24_be(rbuf[3], rbuf[4], rbuf[5]);
+	
+    //6, 7: Compensate Temperature & Pressure value
     return baro_2smpb02e_output_compensation(rawtemp, rawpres, pres, temp);
 }
 
@@ -299,6 +301,7 @@ int main() {
     uint32_t pres, dp, dt;
     int16_t temp;
 
+    // 1, 2
     if (baro_2smpb02e_setup()) {
         return 1;
     }	
